@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-family: vollkorn, serif;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#logo {
+  color: red;
+  font-size: 32px;
+}
+
+.navbar-lewagon .dropdown-item{
+  font-family: karla, sans-serif;
 }
