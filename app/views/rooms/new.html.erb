@@ -1,0 +1,6 @@
+<%= simple_form_for @room do |form| %>
+  <%= form.input :name %>
+  <%= form.input :address %>
+  <%= form.input :price, :label => "Price per Night" %>
+  <%= form.submit "Create Room", class: "btn btn-primary", id: "create-btn" %>
+<% end %>
