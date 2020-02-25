@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
+  def home
+  end
 
-def questions
-    def ask
-    end
-    def answer
-    end
+  def kitchen_sink
   end
 end
