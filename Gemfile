@@ -31,4 +31,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+# Faker for seed
+gem 'faker'
+
 
