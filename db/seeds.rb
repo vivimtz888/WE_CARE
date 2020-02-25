@@ -24,5 +24,3 @@ puts "creating non owners"
   user = User.new(email: Faker::Internet.email, password: '123456', owner: false  )
   user.save
 end
-
-
