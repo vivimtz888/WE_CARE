@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2 bg bg-white mt-3 pb-3 border border-dark">
+<div class="container mt-3">
+  <div class="row d-flex justify-content-around">
+    <div class="col-sm-6 py-4 bg bg-white border border-dark">
       <div class="booking">
         <h2><%= @room.name %></h2>
         <%= image_tag(@room.photo_url.to_s, class: "w-100 mb-3 border border-dark") %>
