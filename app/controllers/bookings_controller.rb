@@ -3,13 +3,16 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @room    = Room.find(params[:room_id])
+
     @booking.user = current_user
-    @booking.room = Room.find(params[:room_id])
+    @booking.room = @room
+
     if @booking.save
-      flash[:notice] = "Booking confirmed!"
+      flash[:notice] = "Your Green Pasture Awaits!"
       redirect_to root_path
     else
-      render :new
+      render "rooms/show"
     end
   end
 
