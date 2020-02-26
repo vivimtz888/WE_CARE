@@ -1,6 +1,12 @@
-<%= simple_form_for @room do |form| %>
-  <%= form.input :name %>
-  <%= form.input :address %>
-  <%= form.input :price, :label => "Price per Night" %>
-  <%= form.submit "Create Room", class: "btn btn-primary", id: "create-btn" %>
-<% end %>
+<div class="container mt-3">
+  <div class="row d-flex justify-content-around">
+    <div class="col-sm-6 bg bg-white pt-3 pb-4 border-dark">
+      <%= simple_form_for @room do |form| %>
+        <%= form.input :name %>
+        <%= form.input :address %>
+        <%= form.input :price, :label => "Price per Night" %>
+        <%= form.submit "Create Room", class: "btn btn-primary", id: "create-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
