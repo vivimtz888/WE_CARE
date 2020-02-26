@@ -3,6 +3,12 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 32px;
+  color:black;
+  box-shadow: 4px 0px 20px #888888;
+    &:hover{
+    opacity: 0.5;
+    transition-duration: 0.2s;
+  }
 }
 
 .room-card > img {
@@ -19,9 +25,15 @@
 
 .room-card p {
   font-size: 18px;
-  opacity: .7;
+  opacity: 1;
   margin: 0;
 }
+
+
+.room-card a{
+  display: inline-block;
+}
+
 
 
 .room-card .room-card-infos {
@@ -30,6 +42,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  min-height: 150px;
 }
 
 .room-card-infos .room-card-user {
@@ -37,4 +50,8 @@
   right: 16px;
   top: -20px;
   width: 60px;
+}
+
+.card-no-hover a:hover {
+  text-decoration: none !important;
 }
