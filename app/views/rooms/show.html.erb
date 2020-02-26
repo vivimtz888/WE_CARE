@@ -1,9 +1,18 @@
-<h2><%= @room.name %></h2>
-<p><%= @room.address %></p>
-<h3>$<%= @room.price %> per night</h3>
+<div class="container mt-3">
+  <div class="row d-flex justify-content-around">
+    <div class="col-sm-6 py-4 bg bg-white border border-dark">
+      <div class="booking">
+        <h2><%= @room.name %></h2>
+        <%= image_tag(@room.photo_url.to_s, class: "w-100 mb-3 border border-dark") %>
+        <p><%= @room.address %></p>
+        <h3>$<%= @room.price %> per night</h3>
 
-<%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room.id) do |form| %>
-  <%= form.input :start_date, as: :date, html5: true %>
-  <%= form.input :end_date, as: :date, html5: true %>
-  <%= form.submit "Create Booking", class: "btn btn-primary", id: "create-btn" %>
-<% end %>
+        <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room.id) do |form| %>
+          <%= form.input :start_date, as: :date, html5: true %>
+          <%= form.input :end_date, as: :date, html5: true %>
+          <%= form.submit "Create Booking", class: "btn btn-primary", id: "create-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
