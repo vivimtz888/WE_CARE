@@ -18,7 +18,8 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     @room.user = current_user
     if @room.save
-      redirect_to room_path(@room)
+      flash[:alert] = "Your Room is Added!"
+      redirect_to root_path
     else
       render :new
     end
