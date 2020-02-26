@@ -12,12 +12,15 @@ Room.destroy_all
 
 puts "creating owners and their rooms"
 
+choices = ["old,room", "scary,room", "modern,room", "cozy,room", "luxury,room", "mansion,room", "hotel,room", "terry,crews"]
+
 
 10.times do
   user = User.new(email: Faker::Internet.email, password: '123456', owner: true)
   user.save
   rand(10).times do
-    Room.create(name: Faker::FunnyName.four_word_name, address: Faker::Address.full_address, price: rand(100000), user_id: user.id)
+    url = "https://source.unsplash.com/collection/2303151/#{rand(1..9999)}"
+    Room.create(name: Faker::FunnyName.four_word_name, address: Faker::Address.full_address, price: rand(100000), user_id: user.id, photo_url:"#{url}")
   end
 end
 
