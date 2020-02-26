@@ -6,14 +6,14 @@
       <div class="col-md-4 card-no-hover">
       <%= link_to room_path(room) do %>
         <div class="room-card">
-          <img src="https://images.unsplash.com/photo-1454418747937-bd95bb945625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"/>
+          <%= image_tag(room.photo_url.to_s) %>
           <div class="room-card-infos">
             <div>
               <h2><%= room.name %></h2>
               <p><%= room.address %></p>
             </div>
             <h2 class="room-card-pricing"><%= room.price %></h2>
-            <img src="https://res.cloudinary.com/dhlgr04v3/image/upload/v1582668209/old-man_a6rfdi.jpg" class="room-card-user avatar-bordered" />
+            <img src="h" class="room-card-user avatar-bordered" />
           </div>
         </div>
       </div>
