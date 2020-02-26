@@ -16,6 +16,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.photo_url = "https://source.unsplash.com/collection/2303151/#{rand(1..9999)}"
     @room.user = current_user
     if @room.save
       redirect_to room_path(@room)
