@@ -13,3 +13,8 @@
 @import "pages/index";
 
 h2 { padding-top: 8px }
+
+.card-no-hover a:hover {
+  text-decoration: none !important;
+}
+
