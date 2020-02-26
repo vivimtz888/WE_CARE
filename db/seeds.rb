@@ -8,6 +8,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Room.destroy_all
 
 puts "creating owners and their rooms"
 
