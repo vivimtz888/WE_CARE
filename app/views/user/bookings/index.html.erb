@@ -1,3 +1,4 @@
+<%if current_user.owner == false %>
 <div class="row">
   <div class="col-6">
     <h2>My bookings</h2>
@@ -6,6 +7,7 @@
     <% end %>
   </div>
 
+<%else%>
   <div class="col-6">
     <h2>Bookings from my room I own very much</h2>
     <% @owner_bookings.each do |booking| %>
@@ -13,4 +15,4 @@
     <% end %>
   </div>
 </div>
-
+<%end%>
