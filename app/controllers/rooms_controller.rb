@@ -8,6 +8,11 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @booking = Booking.new
+    @markers =
+      [{
+        lat: @room.latitude,
+        lng: @room.longitude
+      }]
   end
 
   def new

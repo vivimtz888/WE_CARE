@@ -34,4 +34,7 @@ end
 # Faker for seed
 gem 'faker'
 
+#Geocoder to get coordinates
+gem 'geocoder'
+
 
