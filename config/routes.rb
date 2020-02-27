@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   resources :rooms, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
   end
+
+  namespace :user do
+    resources :bookings, only: [:index]
+  end
+
 end
