@@ -2,6 +2,9 @@
   justify-content: space-between;
   background: white;
   font-family: vollkorn, serif;
+  position: sticky;
+  top: 0;
+  z-index: 9999
 }
 
 .navbar-lewagon .navbar-collapse {
