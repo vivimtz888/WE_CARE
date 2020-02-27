@@ -8,8 +8,25 @@
         <h3>$<%= @room.price %> per night</h3>
 
         <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room.id) do |form| %>
-          <%= form.input :start_date, as: :date, html5: true %>
-          <%= form.input :end_date, as: :date, html5: true %>
+          <%= form.input :start_date,
+            as: :date,
+            html5: true,
+            input_html: {
+              class: "flatpickr",
+              data: {
+                disabled: @room.booked_recent_dates
+              }
+            } %>
+
+          <%= form.input :end_date,
+            as: :date,
+            html5: true,
+            input_html: {
+              class: "flatpickr",
+              data: {
+                disabled: @room.booked_recent_dates
+              }
+            } %>
           <%= form.submit "Create Booking", class: "btn btn-primary", id: "create-btn" %>
         <% end %>
       </div>

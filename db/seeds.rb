@@ -29,3 +29,20 @@ puts "creating non owners"
   user = User.new(email: Faker::Internet.email, password: '123456', owner: false  )
   user.save
 end
+
+# Booking first room
+first_room = Room.first
+
+Booking.create!(
+  user: User.last,
+  start_date: Date.today - 2.days,
+  end_date: Date.today + 2.days,
+  room: first_room
+)
+
+Booking.create!(
+  user: User.last,
+  start_date: Date.today + 4.days,
+  end_date: Date.today + 7.days,
+  room: first_room
+)
