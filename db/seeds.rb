@@ -9,6 +9,7 @@
 
 User.destroy_all
 Room.destroy_all
+Booking.destroy_all
 
 puts "creating owners and their rooms"
 
@@ -18,9 +19,9 @@ choices = ["old,room", "scary,room", "modern,room", "cozy,room", "luxury,room", 
 10.times do
   user = User.new(email: Faker::Internet.email, password: '123456', owner: true)
   user.save
-  rand(10).times do
+  rand(1..4).times do
     url = "https://source.unsplash.com/collection/2303151/#{rand(1..9999)}"
-    Room.create(name: Faker::FunnyName.four_word_name, address: Faker::Address.full_address, price: rand(100000), user_id: user.id, photo_url:"#{url}")
+    Room.create(name: Faker::FunnyName.four_word_name, address: Faker::Address.country, price: rand(100000), user_id: user.id, photo_url:"#{url}")
   end
 end
 
@@ -32,13 +33,6 @@ end
 
 # Booking first room
 first_room = Room.first
-
-Booking.create!(
-  user: User.last,
-  start_date: Date.today - 2.days,
-  end_date: Date.today + 2.days,
-  room: first_room
-)
 
 Booking.create!(
   user: User.last,
