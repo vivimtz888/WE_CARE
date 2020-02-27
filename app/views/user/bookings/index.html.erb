@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-6">
+    <h2>My bookings</h2>
+    <% @user_bookings.each do |booking| %>
+      <%= render "components/room-card", room: booking.room %>
+    <% end %>
+  </div>
+
+  <div class="col-6">
+    <h2>Bookings from my room I own very much</h2>
+    <% @owner_bookings.each do |booking| %>
+      <%= render "components/room-card", room: booking.room %>
+    <% end %>
+  </div>
+</div>
+
