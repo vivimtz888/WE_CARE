@@ -10,7 +10,13 @@ class Room < ApplicationRecord
   end
 
   def available_between?(start_date, end_date)
-    conflicting_bookings_on(start_date).or(conflicting_bookings_on(end_date)).empty?
+    bookings.where(
+      ":picked_start_date < start_date AND end_date < :picked_end_date",
+      picked_start_date: start_date,
+      picked_end_date: end_date
+    ).or(
+      conflicting_bookings_on(start_date).or(conflicting_bookings_on(end_date))
+    ).empty?
   end
 
   def conflicting_bookings_on(date)
