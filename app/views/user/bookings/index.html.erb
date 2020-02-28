@@ -1,18 +1,19 @@
-<%if current_user.owner == false %>
-<div class="row">
-  <div class="col-6">
-    <h2>My bookings</h2>
-    <% @user_bookings.each do |booking| %>
-      <%= render "components/room-card", room: booking.room %>
-    <% end %>
-  </div>
+<div class="container">
+  <h2 class="mb-3">My bookings</h2>
+  <div class="row">
+    <%if current_user.owner == false %>
+        <% @user_bookings.each do |booking| %>
+          <div class="col-md-6">
+            <%= render "components/room-card", room: booking.room %>
+          </div>
+        <% end %>
 
-<%else%>
-  <div class="col-6">
-    <h2>Bookings from my rooms I own very much</h2>
-    <% @owner_bookings.each do |booking| %>
-      <%= render "components/room-card", room: booking.room %>
-    <% end %>
+    <%else%>
+      <% @owner_bookings.each do |booking| %>
+          <div class="col-md-6">
+            <%= render "components/room-card", room: booking.room %>
+          </div>
+      <% end %>
+    <%end%>
   </div>
 </div>
-<%end%>
