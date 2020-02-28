@@ -25,7 +25,7 @@ class RoomsController < ApplicationController
     @room.user = current_user
     if @room.save
       flash[:alert] = "Your Room is Added!"
-      redirect_to root_path
+      redirect_to room_path(@room)
     else
       render :new
     end
