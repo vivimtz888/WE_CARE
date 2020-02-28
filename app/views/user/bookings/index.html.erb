@@ -9,7 +9,7 @@
 
 <%else%>
 
-    <h2>Bookings from my rooms I own very much</h2>
+    <h2>My Bookings: Owner</h2>
     <div class="row">
     <% @owner_bookings.each do |booking| %>
       <%= render "components/booking-card", room: booking.room, booking: booking%>
