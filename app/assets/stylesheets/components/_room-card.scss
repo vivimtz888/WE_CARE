@@ -29,12 +29,9 @@
   margin: 0;
 }
 
-
 .room-card a{
   display: inline-block;
 }
-
-
 
 .room-card .room-card-infos {
   padding: 16px;
@@ -48,6 +45,6 @@
 .room-card-infos .room-card-user {
   position: absolute;
   right: 16px;
-  top: -100px;
+  top: -30px;
   width: 60px;
 }
