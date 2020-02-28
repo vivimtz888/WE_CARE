@@ -1,12 +1,14 @@
-<div class="booking-card col-6 ">
-  <img src=<%= room.photo_url %>/>
-  <div class="booking-card-infos">
-    <div>
-      <h2><%= room.name %></h2>
-      <p><%= room.address %></p>
-      <p><%= booking.start_date %> - <%= booking.end_date%></p>
+<div class="col-6">
+  <div class="booking-card">
+    <img src=<%= room.photo_url %>/>
+    <div class="booking-card-infos">
+      <div>
+        <h2><%= room.name %></h2>
+        <p><%= room.address %></p>
+        <p><%= booking.start_date %> - <%= booking.end_date%></p>
+      </div>
+      <h2 class="booking-card-pricing">$<%= room.price %></h2>
+      <img class="booking-card-user avatar-bordered" src="https://res.cloudinary.com/dhlgr04v3/image/upload/v1582668209/old-man_a6rfdi.jpg"/>
     </div>
-    <h2 class="booking-card-pricing">$<%= room.price %></h2>
-    <img class="booking-card-user avatar-bordered" src="https://res.cloudinary.com/dhlgr04v3/image/upload/v1582668209/old-man_a6rfdi.jpg"/>
   </div>
 </div>
