@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       flash[:notice] = "Your Green Pasture Awaits!"
-      redirect_to root_path
+      redirect_to user_bookings_path
     else
       render "rooms/show"
     end
