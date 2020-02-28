@@ -1,0 +1,19 @@
+.booking {
+  background-color: white;
+  border-radius: 8px;
+
+  padding: 20px;
+  .booking-flex {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+     display: flex;
+    * {
+    flex-basis: 50%;
+    }
+  }
+  .booking-pic {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
