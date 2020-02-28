@@ -21,7 +21,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    @room.photo_url = "https://source.unsplash.com/collection/2303151/#{rand(1..9999)}"
+    @room.photo_url = "https://images.unsplash.com/photo-1581543591520-afa01e4d7e7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
     @room.user = current_user
     if @room.save
       flash[:alert] = "Your Room is Added!"

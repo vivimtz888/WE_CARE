@@ -1,10 +1,21 @@
 <div class="container">
   <div class="row d-flex justify-content-around">
     <div class="col-sm-12 col-lg-9 py-4 bg bg-white border border-dark mt-4">
+    <div class="col-sm-9 py-4 mt-4">
       <div class="booking">
         <h2><%= @room.name %></h2>
-        <%= image_tag(@room.photo_url.to_s, class: "w-100 mb-3 border border-dark") %>
-        <p><%= @room.address %></p>
+        <div class="booking-flex">
+          <div class="booking-pic" style="background-image: url('<%= @room.photo_url.to_s%>');"></div>
+          <div
+            id="map"
+            class="booking-map"
+            style="width: 100%;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+        </div>
+        <div class="booking-info">
+             <p><%= @room.address %></p>
         <h3>$<%= @room.price %> per night</h3>
 
         <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room.id) do |form| %>
@@ -27,18 +38,17 @@
                 disabled: @room.booked_recent_dates
               }
             } %>
-          <%= form.submit "Create Booking", class: "btn btn-primary", id: "create-btn" %>
+          <%= form.submit "Create Booking", class: "btn btn-primary mb-3", id: "create-btn" %>
 
-        <div
-          id="map"
-          style="width: 100%;
-          height: 600px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        ></div>
+
 
         <% end %>
+
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
