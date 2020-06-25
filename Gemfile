@@ -38,4 +38,3 @@ gem 'faker'
 #Geocoder to get coordinates
 gem 'geocoder'
 
-
