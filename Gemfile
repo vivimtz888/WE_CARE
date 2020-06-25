@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
+gem 'rubygems-update', '~> 3.1', '>= 3.1.4'
 
 gem 'devise'
 
@@ -37,5 +38,4 @@ gem 'faker'
 #Geocoder to get coordinates
 gem 'geocoder'
 
-gem 'activesupport', '~> 6.0', '>= 6.0.3.2'
 
