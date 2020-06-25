@@ -37,4 +37,5 @@ gem 'faker'
 #Geocoder to get coordinates
 gem 'geocoder'
 
+gem 'activesupport', '~> 6.0', '>= 6.0.3.2'
 
